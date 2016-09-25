@@ -1,0 +1,16 @@
+<html ng-app="myFirstApp">
+<title>Index</title>
+<head>
+ <script src="angular.js"></script>
+ <script src="app.js"></script>
+</head>
+<body>
+  <h1>This is the first page using angular Js</h1>
+  <div>
+    <div ng-controller="firstController">
+     <input type="text" ng-model="name" ng-keyup="displayLength();" ng-blur="upper();">
+     Length of the string is: {{length}}
+    </div>
+  </div>
+</body>
+</html>
