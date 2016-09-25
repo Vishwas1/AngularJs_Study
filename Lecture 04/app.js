@@ -9,9 +9,8 @@
     $scope.displayLength = function (){
        $scope.length  =   $scope.name.length;
     };
-console.log($filter);
     $scope.upper = function(){
-      var toUpper = $filter('uppercase1');
+      var toUpper = $filter('uppercase');
       $scope.name = toUpper($scope.name);
     };
 
