@@ -1,15 +1,28 @@
 <html ng-app="myFirstApp">
 <title>Index</title>
 <head>
- <script src="angular.js"></script>
- <script src="app.js"></script>
+
+ <link rel="Stylesheet" href="http://paramquery.com/pqselect/trial/pqselect.min.css" />
+<script src="http://paramquery.com//pqselect/trial/pqselect.min.js"></script>
+
+<link rel="stylesheet" href="http://paramquery.com/pro2/Content/css3.3.1/pqgrid.min.css" />
+<link rel="stylesheet" href="http://paramquery.com/pro2/Content/css3.3.1/pqgrid.ui.min.css" id="pqgrid_ui_link" />
+<link rel="stylesheet" href="http://paramquery.com/pro2/Content/css3.3.1/themes/office/pqgrid.css" id="pqgrid_office_link" />
+<script src="http://paramquery.com/pro2/Content/js3.3.2/pqgrid.min.js"></script>
+<script src="angular.js"></script>
+<script src="app.js"></script>
+
 </head>
 <body>
   <h1>This is the first page using angular Js</h1>
   <div>
     <div ng-controller="firstController">
-     <input type="text" ng-model="name" ng-keyup="displayLength();" ng-blur="upper();">
-     Length of the string is: {{length}}
+     <!-- <input type="text" ng-model="name" ng-keyup="displayLength();" ng-blur="upper();">
+     Length of the string is: {{length}} -->
+
+     <h1>Lets see the Agular Gird Example 01 !</h1>
+     <pq-grid options="gridModel" style="margin:auto;"></pq-grid>
+
     </div>
   </div>
 </body>
