@@ -23,7 +23,11 @@ function NarrowItDownController(MenuSearchService){
   controller.searchText ="";
   controller.message ="";
   controller.show =false;
+  controller.showLoader =false;
   controller.GetFilteredItems = function(){
+    controller.show =false;
+    controller.showLoader =true;
+    controller.message ="";
     var promise  = MenuSearchService.getMatchedMenuItems();
     promise.then(function (response){
       controller.found = [];
@@ -47,6 +51,7 @@ function NarrowItDownController(MenuSearchService){
 
   function RefreshValidationMessage(){
     controller.searchText ="";
+    controller.showLoader =false;
     if(controller.found.length === 0){
       controller.message ="Nothing found.";
       controller.show =false;
