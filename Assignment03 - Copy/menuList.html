@@ -1,0 +1,25 @@
+<table border="1" ng-if="list.show">
+  <tr style="background-color: rgb(179, 179, 194);"  >
+    <th style="padding: 5px;">ID</th>
+    <th style="padding: 5px;">NAME</th>
+    <th style="padding: 5px;">DESCRIPTION</th>
+    <th style="padding: 5px;">L P NAME</th>
+    <th style="padding: 5px;">PRICE LARGE</th>
+    <th style="padding: 5px;">PRICE SAMLL</th>
+    <th style="padding: 5px;">SHORT NAME</th>
+    <th style="padding: 5px;">SMALL PORTION NAME</th>
+    <th style="padding: 5px;">[{{list.found.length}}]</th>
+  </tr>
+  <tr ng-repeat =" item in list.found"  >
+    <td style="padding: 5px;color:grey;">{{item.id}} </td>
+    <td style="padding: 5px;color:grey;">{{item.name}} </td>
+    <td style="padding: 5px;color:grey;"> {{item.description}} </td>
+    <td style="padding: 5px;color:grey;">{{item.large_portion_name}} </td>
+    <td style="padding: 5px;color:grey;">{{item.price_large}} </td>
+    <td style="padding: 5px;color:grey;">{{item.price_small}} </td>
+    <td style="padding: 5px;color:grey;">{{item.short_name}} </td>
+    <td style="padding: 5px;color:grey;">{{item.small_portion_name}} </td>
+    <td style="background-color:rgb(179, 179, 194); padding: 5px;"> <button class="btn btn-primary" ng-click="list.removeItem($index)">Don't want this one!</button> </td>
+
+  </tr>
+</table>

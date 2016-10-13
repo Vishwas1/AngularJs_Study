@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script type="text/javascript" src="jquery-1.11.0.min.js" ></script>
+    <script type="text/javascript" src="angular.js" ></script>
+    <script  type="text/javascript" src="app.js" ></script>
+    <style>
+      .search{
+        float: left;
+        border-left: 2px solid rgba(0, 0, 0, 0.4);
+        border-right: 2px solid rgba(0, 0, 0, 0.4);
+        border-top: 2px solid rgba(0, 0, 0, 0.4);
+        padding: 6px;
+        margin-right: 10px;
+        box-shadow: 1px 2px 3px -2px;
+        border-radius: 5px;
+        float:left;
+        background-color: white;
+
+      }
+      .textContainer{
+        border: 2px solid rgba(128, 128, 128, 0.23);
+        height: 37px;
+        border-radius: 5px;
+        padding-right: 4px;
+      }
+      .imageClass{
+        margin-left: 5px;
+        margin-top: 7px;
+        opacity: 0.5;
+        float: right;
+      }
+      .pagebar {
+        padding-left: 4px;
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+        width:inherit;
+        background-color: rgb(179, 179, 194);color:black;
+      }
+      .keyword{
+        padding-left: 2px;
+        min-width: 150px;
+        //border: 1px solid grey;
+        border-left: 1px solid rgba(0, 0, 0, 0.4);
+        border-right: 1px solid rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        border-top: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 2px;
+        color:grey;
+        padding-left:6px
+        background: antiquewhite;
+        /*box-shadow: 1px 1px 1px 1px ;*/
+      }
+      .cross{
+        float:right;padding-left:7px;border-radius:3px;width:20px;height:20px;margin-bottom: 2px;margin-right: 1px;margin-top: 0px;cursor:pointer;color:grey
+      }
+      .keywordArea{
+        /*width:50px;*/
+        /*height : 50px;*/
+        border-left: 1px solid rgba(0, 0, 0, 0.17);
+        border-right: 1px solid rgba(0, 0, 0, 0.17);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+        background-color:white;
+        margin-top: 3px;
+        border-radius: 0px 0px 5px 5px ;
+        padding-left: 6px;
+        padding-top: 6px;
+        padding-right: 6px;
+        color:grey;
+        padding-bottom: 5px;
+      }
+    </style>
+    <script>
+
+    </script>
+  </head>
+<body ng-app="NarrowItDownApp">
+   <div class="container" style="background-color: rgba(236, 13, 13, 0.44); min-height: 100%;" ng-controller="NarrowItDownController as narrowcontoller">
+    <div><center><h1 >Different Search functionalities using Angular Js</h1><hr/></center></div>
+    <div style="">
+    <div class="search">
+      <table>
+        <tr><td><label >Normal Search</label></td></tr>
+        <tr><td><div class="textContainer"><input type="text" placeholder="Search text" class="form-control" ng-model="narrowcontoller.searchText"><img src="images/search2.png" alt="" height="20" width="20"  class = "imageClass" ng-click="narrowcontoller.GetFilteredItems()" title="Search"/></input></div></td></tr>
+        <tr><td><hr/></td></tr>
+        <tr><td><label>Runtime Search</label><br/></td></tr>
+        <tr><td><div class="textContainer"><input type="text" placeholder="Start typing" class="form-control" ng-keyup="narrowcontoller.runtimeSearch()" ng-model="narrowcontoller.runTimeSearchText"></div></td></tr>
+        <tr><td><hr/></td></tr>
+        <tr><td><label>Composite Search</label><br/></td></tr>
+        <tr><td><div class="textContainer"><input type="text" placeholder="Enter Keywords" class="form-control" ng-model="narrowcontoller.compositeSearchText"><img src="images/add1.png" alt="" height="20" width="20"  class = "imageClass" ng-click="narrowcontoller.compositeSearch()" title="Add and Search"/></div></td></tr>
+        <tr>
+          <td>
+              <div class="keywordArea" style="float:left">
+                  <table id="keywordsTable" ></table>
+              </div>
+              <div id="refresh" style="float:right;display:none"><img src="images/refresh2.png" alt="" height="30" width="30" class="imageClass" ng-click="narrowcontoller.clearCompositeFilters()" title="Refresh"/></div>
+          </td>
+        </tr>
+      </table>
+      <hr/><items-loader-indicator>{{narrowcontoller.message}}</items-loader-indicator><br/>
+    </div>
+    <div style="margin-left: 20%;" >
+      <div style="overflow-y: auto;height:74.5% " >
+        <img src="images/loading.gif" alt="" id="loader" style="margin-top: 25%;margin-left: 49%;"/>
+        <found-items my-items="narrowcontoller" ></found-items>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top: 3.2%">
+    <hr/>
+    <center><h5 style="color:rgb(105, 95, 95);">  CopyRight @ Vishwas B Anand 2016 </h5></center>
+  </div>
+  </div>
+</body>
+</html>

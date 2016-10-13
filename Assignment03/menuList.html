@@ -1,0 +1,28 @@
+<table border="1" style="background-color: white;width: 100%;">
+  <tr style="background-color: rgb(179, 179, 194);"  >
+    <th style="padding: 5px;">ID</th>
+    <th style="padding: 5px;">NAME</th>
+    <th style="padding: 5px;">DESCRIPTION</th>
+    <th style="padding: 5px;">CATEGORY</th>
+    <th style="padding: 5px;">IMAGE</th>
+    <th style="padding: 5px;">STATUS</th>
+    <th style="padding: 5px;">QUANTITY</th>
+    <th style="padding: 5px;">PRICE ($)</th>
+    <th style="padding: 5px;">DOM</th>
+    <th style="padding: 5px;">[{{list.found.length}}]</th>
+  </tr>
+  <tr ng-repeat =" item in list.found"  >
+    <td style="padding: 5px;color:grey;">{{item.id}} </td>
+    <td style="padding: 5px;color:grey;">{{item.name}} </td>
+    <td style="padding: 5px;color:grey;"> {{item.desc}} </td>
+    <td style="padding: 5px;color:grey;">B </td>
+    <td style="padding: 5px;"><img src="{{item.src}}" alt="" height="40" width="40"/> </td>
+    <td style="padding: 5px;color:grey;">{{item.status}} </td>
+    <td style="padding: 5px;color:grey;">{{item.quantityLeft}} </td>
+    <td style="padding: 5px;color:grey;">{{item.price}} </td>
+    <td style="padding: 5px;color:grey;">{{item.date}} </td>
+    <!-- <td style="background-color:rgb(179, 179, 194); padding: 5px;"> <button class="btn btn-primary">Don't want this one!</button> </td> -->
+    <td style="background-color:rgb(179, 179, 194); padding: 5px;"> <button class="btn btn-primary" ng-click="list.removeItem($index)">x</button> </td>
+  </tr>
+</table>
+<div class="pagebar">Total {{list.found.length}} Records Found. </div>
