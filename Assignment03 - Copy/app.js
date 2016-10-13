@@ -46,7 +46,6 @@ function NarrowItDownController(MenuSearchService){
   };
 
   function RefreshValidationMessage(){
-    debugger;
     controller.searchText ="";
     if(controller.found.length === 0){
       controller.message ="Nothing found.";
