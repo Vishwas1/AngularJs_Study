@@ -21,6 +21,7 @@ function NarrowItDownController(MenuSearchService){
   debugger;
   var controller = this;
   controller.searchText ="";
+  controller.loaderSrc= "/loading.gif";
   controller.found  = MenuSearchService.getMatchedMenuItemsHard();
   controller.message ="Total No. Of Records : "+ controller.found.length;
   controller.runTimeSearchText ="";
