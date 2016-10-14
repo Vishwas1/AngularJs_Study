@@ -28,7 +28,7 @@ function NarrowItDownController(MenuSearchService){
     controller.show =false;
     controller.showLoader =true;
     controller.message ="";
-    if(controller.searchText != ""){
+    if(controller.searchText !== ""){
       var promise  = MenuSearchService.getMatchedMenuItems();
       promise.then(function (response){
         controller.found = [];
@@ -38,15 +38,15 @@ function NarrowItDownController(MenuSearchService){
           }
         }
         RefreshValidationMessage();
+      });
+
+      promise.catch(function (response){
+        console.log(response);
+      });
     }else{
       controller.found = [];
       RefreshValidationMessage();
     }
-    });
-    promise.catch(function (response){
-      console.log(response);
-      RefreshValidationMessage();
-    });
   };
 
   controller.removeItem =function(index){
