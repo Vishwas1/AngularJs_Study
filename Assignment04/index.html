@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingList'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <title>Vishwas's Cafe</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>Welcome to Vishwas's Cafe</h1>
+      </div>
+      <div id="content">
+        <ui-view></ui-view>
+      </div>
+      <div id="footer">
+        Copyright@VishwasBAnand2016
+      </div>
+    </div>
+  </body>
+
+
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/shoppinglist/shoppinglist.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- 'ShoppingList' module artifacts -->
+  <script src="src/shoppinglist/shoppinglist.component.js"></script>
+  <script src="src/shoppinglist/main-shoppinglist.controller.js"></script>
+  <script src="src/shoppinglist/shoppinglist.service.js"></script>
+  <script src="src/shoppinglist/item-detail.controller.js"></script>
+</html>

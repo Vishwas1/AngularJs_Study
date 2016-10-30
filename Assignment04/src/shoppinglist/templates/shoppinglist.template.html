@@ -1,0 +1,5 @@
+<table style="padding-left:20px; font-family:cursive">
+  <tr  ng-repeat="item in $ctrl.items" ui-sref="mainList.itemDetail({itemId: $index})" >
+    <td style="padding-top:10px;"><a ui-sref="mainList.itemDetail({itemId: $index})"  style="text-decoration:none;">{{ item.name }}</a></td>
+  </tr>
+</table>

@@ -1,0 +1,9 @@
+<!-- <div id="list" ng-controller='MainShoppingListController as mainList'> -->
+<a ui-sref="home">Home</a> &gt; <span>Categories</span>
+<h3>Our Categories are :</h3>
+<div style="float:left;width:200px;height:400px;    background-color: #e2e2e2;border-radius:2px;">
+  <shopping-list items="mainList.items"></shopping-list>
+</div>
+<div style="width:700px;height:400px;float:right;padding-right:5px;padding-left:5px; background-color: #e2e2e2; color: #2b2727;border-radius:2px;margin-right:20px">
+  <ui-view></ui-view>
+</div>
