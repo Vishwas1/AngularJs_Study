@@ -16,8 +16,8 @@ function foundItems(){
   return ddo;
 }
 
-NarrowItDownController.$inject = ['MenuSearchService'];
-function NarrowItDownController(MenuSearchService){
+NarrowItDownController.$inject = ['MenuSearchService','$compile'];
+function NarrowItDownController(MenuSearchService,$compile){
   debugger;
   var controller = this;
   controller.searchText ="";
@@ -56,7 +56,9 @@ function NarrowItDownController(MenuSearchService){
   };
   controller.compositeSearch =function (){
     $('#refresh').css('display','block');
-    $('#keywordsTable').append('<tr onClick="removeFilter(this);"><td ><div style="float:left;"><div class="keyword">'+controller.compositeSearchText+'<div  class="cross">x</div></div></div></td></tr>');
+    var tableRow = '<tr ng-click ="removeFilter()"><td ><div style="float:left;"><div class="keyword">'+controller.compositeSearchText+'<div  class="cross">x</div></div></div></td></tr>';
+    $('#keywordsTable').append(tableRow);
+    $compile(tableRow)(controller);
     controller.found =MenuSearchService.GetFilteredListForComposite();
     RefreshValidationMessage();
   };
